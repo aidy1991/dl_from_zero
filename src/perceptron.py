@@ -5,8 +5,8 @@ import numpy as np
 
 
 def perceptron(x, w, b):
-    signal = np.sum(x * w) + b
-    return 1 if signal > 0 else 0
+    s = np.sum(x * w) + b
+    return 1 if s > 0 else 0
 
 
 def AND(x):
@@ -23,6 +23,7 @@ def NAND(x):
 
 def XOR(x):
     return AND(np.array([NAND(x), OR(x)]))
+
 
 if __name__ == '__main__':
     print('AND')
@@ -48,4 +49,3 @@ if __name__ == '__main__':
     print('[0, 1]: ', XOR(np.array([0, 1])))
     print('[1, 0]: ', XOR(np.array([1, 0])))
     print('[1, 1]: ', XOR(np.array([1, 1])))
-
